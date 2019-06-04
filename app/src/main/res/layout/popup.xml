@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="350dp"
     android:layout_height="550dp"
     android:background="@drawable/dialog_bg"
     android:padding="5dp"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    tools:ignore="HardcodedText">
 
     <ImageView
         android:id="@+id/closeBtn"
@@ -15,8 +17,8 @@
         android:src="@drawable/ic_action_close"
         android:layout_gravity="end"
         android:gravity="center"
-        android:background="@drawable/circle"/>
-
+        android:background="@drawable/circle"
+        android:contentDescription="Close" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,9 +29,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="5dp"
-            android:text="About Developer"
+            android:text="@string/action_about"
             android:textColor="@color/white"
-            android:textSize="23dp"
+            android:textSize="23sp"
             android:textStyle="bold" />
 
         <ImageView
@@ -37,16 +39,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
-            android:src="@drawable/profile" />
+            android:src="@drawable/profile"
+            android:contentDescription="Photo" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="Jacky Ly"
+            android:text="@string/author"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
         <TextView
@@ -56,7 +59,7 @@
             android:layout_marginTop="5dp"
             android:text="Undergraduate Student"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:textStyle="bold" />
 
         <TextView
@@ -65,7 +68,7 @@
             android:layout_gravity="center_horizontal"
             android:text="Computer Science"
             android:textColor="@color/white"
-            android:textSize="14dp"
+            android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -73,7 +76,8 @@
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:background="@drawable/button_style"
@@ -89,7 +93,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/github"
-                android:onClick="goToGithub"/>
+                android:onClick="goToGithub"
+                android:contentDescription="GitHub" />
         </LinearLayout>
 
         <LinearLayout
@@ -106,7 +111,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/linkedin"
-                android:onClick="goToLinkedin"/>
+                android:onClick="goToLinkedin"
+                android:contentDescription="LinkedIn" />
         </LinearLayout>
 
         <LinearLayout
@@ -123,7 +129,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/youtube"
-                android:onClick="goToYoutube"/>
+                android:onClick="goToYoutube"
+                android:contentDescription="YouTube" />
         </LinearLayout>
     </LinearLayout>
 
@@ -145,7 +152,9 @@
             android:textColor="@color/white"
             android:autoLink="web"
             android:clickable="true"
-            android:onClick="goToWebsite"/>
+            android:onClick="goToWebsite"
+            android:focusable="true"
+            style="?android:attr/borderlessButtonStyle"/>
 
         <Button
             android:id="@+id/btnWeb"
@@ -158,7 +167,9 @@
             android:textColor="@color/white"
             android:autoLink="web"
             android:clickable="true"
-            android:onClick="goToWeb"/>
+            android:onClick="goToWeb"
+            android:focusable="true"
+            style="?android:attr/borderlessButtonStyle"/>
     </LinearLayout>
 
     <TextView
@@ -168,7 +179,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="15dp"
         android:textColor="@color/white"
-        android:textSize="12dp"
+        android:textSize="12sp"
         android:textStyle="bold" />
 
 </LinearLayout>
