@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Time Sheets</string>
     <string name="long_app_name">Time Sheet Calculator</string>
+    <string name="action_about">About</string>
 </resources>
