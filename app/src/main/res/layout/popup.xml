@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="350dp"
+    android:layout_width="375dp"
     android:layout_height="550dp"
     android:background="@drawable/dialog_bg"
     android:padding="5dp"
@@ -93,7 +93,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/github"
-                android:onClick="goToGithub"
+                android:onClick="goToGitHub"
                 android:contentDescription="GitHub" />
         </LinearLayout>
 
@@ -107,11 +107,11 @@
             android:layout_height="100dp">
 
             <ImageView
-                android:id="@+id/linkedinImg"
+                android:id="@+id/linkedInImg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/linkedin"
-                android:onClick="goToLinkedin"
+                android:src="@drawable/linked_in"
+                android:onClick="goToLinkedIn"
                 android:contentDescription="LinkedIn" />
         </LinearLayout>
 
@@ -129,7 +129,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:src="@drawable/youtube"
-                android:onClick="goToYoutube"
+                android:onClick="goToYouTube"
                 android:contentDescription="YouTube" />
         </LinearLayout>
     </LinearLayout>

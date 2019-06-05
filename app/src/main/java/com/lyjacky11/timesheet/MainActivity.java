@@ -123,11 +123,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void goToGithub (View view) {
+    public void goToGitHub(View view) {
         goToUrl("https://github.com/lyjacky11");
     }
 
-    public void goToLinkedin (View view) {
+    public void goToLinkedIn(View view) {
         goToUrl("https://www.linkedin.com/in/lyjacky11/");
     }
 
@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
         goToUrl("https://lyjacky11.me/");
     }
 
-    public void goToYoutube (View view) {
+    public void goToYouTube(View view) {
         goToUrl("https://www.youtube.com/user/LyJacky");
     }
 
