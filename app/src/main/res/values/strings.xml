@@ -3,4 +3,5 @@
     <string name="long_app_name">Time Sheet Calculator</string>
     <string name="action_about">About Developer</string>
     <string name="author">Jacky Ly</string>
+    <string name="action_refresh">Refresh</string>
 </resources>

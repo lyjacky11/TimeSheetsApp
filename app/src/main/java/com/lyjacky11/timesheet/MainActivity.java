@@ -2,8 +2,10 @@ package com.lyjacky11.timesheet;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
@@ -29,15 +31,22 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     Dialog dialog;
+    Toast toast;
+
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences prefs = this.getSharedPreferences("com.lyjacky11.timesheet", Context.MODE_PRIVATE);
+        boolean hasVisited = prefs.getBoolean("HAS_VISITED_BEFORE", false);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         dialog = new Dialog(this);
+        toast = Toast.makeText(getApplicationContext(),"Welcome to Time Sheet Calculator!\nCopyright © 2019 Jacky Ly.",Toast.LENGTH_LONG);
 
-        Toast toast = Toast.makeText(getApplicationContext(),"Welcome to Time Sheet Calculator!\nCopyright © 2019 Jacky Ly.",Toast.LENGTH_LONG);
-        toast.show();
+        if(!hasVisited) {
+            toast.show();
+            prefs.edit().putBoolean("HAS_VISITED_BEFORE", true).apply();
+        }
 
         final WebView webView = findViewById(R.id.webView);
         webView.loadUrl("file:///android_asset/index.html");
@@ -166,7 +175,12 @@ public class MainActivity extends AppCompatActivity {
             Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
             dialog.show();
             return true;
-        }// If we got here, the user's action was not recognized.
+        }
+        else if (item.getItemId() == R.id.action_refresh) {
+            finish();
+            startActivity(getIntent());
+        }
+        // If we got here, the user's action was not recognized.
         // Invoke the superclass to handle it.
         return super.onOptionsItemSelected(item);
     }
