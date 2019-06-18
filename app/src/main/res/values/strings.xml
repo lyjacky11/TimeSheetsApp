@@ -4,4 +4,5 @@
     <string name="action_about">About Developer</string>
     <string name="author">Jacky Ly</string>
     <string name="action_refresh">Refresh</string>
+    <string name="action_prefs">Preferences</string>
 </resources>
