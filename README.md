@@ -1,4 +1,4 @@
-# TimeSheetsApp
+# Time Sheet Calculator
 
 [![GitHub latest release version](https://img.shields.io/github/release/lyjacky11/TimeSheetsApp.svg?label=Latest&maxAge=600)](https://github.com/lyjacky11/TimeSheetsApp/releases/latest)
 [![GitHub latest release date](https://img.shields.io/github/release-date/lyjacky11/TimeSheetsApp.svg?label=Released&maxAge=600)](https://github.com/lyjacky11/TimeSheetsApp/releases/latest)
