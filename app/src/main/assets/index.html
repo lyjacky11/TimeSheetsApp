@@ -11,7 +11,9 @@
 <div id="header">
     <h2></h2>
     <h3> Settings </h3>
-    Pay Rate ($): &nbsp;&nbsp;&nbsp;<input type="number" id="pay_rate" value="14.00" min="10.00" max="100.00" step="0.01" />
+    Pay Rate: &nbsp;&nbsp; $ &nbsp;&nbsp;<input type="number" id="pay_rate" value="14.00" min="10.00" max="100.00" step="0.01" style="width: 3.75em"/>
+	<br></br>
+	Rate Multiplier: &nbsp;&nbsp;<input type="number" id="rate_x" value="1.0" min="1.00" max="10.00" step="0.1" style="width: 2.5em"/> x
     <br></br>
 </div>
 
@@ -34,11 +36,12 @@
         <br>
     </div>
     <!-- <h6><font color="red"> NOTE: Only first break works, there is no <br> implementation for additional breaks yet! </font></h6> -->
-    <h5><font color="green">Developer Note: Additional breaks<br>functionality is now working correctly!</font></h5>
+    <!-- <h5><font color="green">Developer Note: Additional breaks<br>functionality is now working correctly!</font></h5> -->
+	</br>
     End Shift: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="end_shift" value="19:00"><br>
     <br></br>
-    <button class="button" onClick="clearForm()">Reset Times</button> &nbsp;
-    <button class="button" onclick="calculateHours()">Calculate</button>
+    <button id="resetBtn" class="button" onClick="clearForm()">Reset Times</button> &nbsp;
+    <button id="calculateBtn" class="button" onclick="calculateHours()">Calculate</button>
 </form>
 
 <div id="results" style="display: none">

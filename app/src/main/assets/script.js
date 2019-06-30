@@ -2,6 +2,7 @@ var counter = 1;
 
 function calculateHours() {
 	let pay_rate = document.getElementById("pay_rate").value;
+	let rate_x = document.getElementById("rate_x").value;
 	let start_shift = document.getElementById("start_shift").value;
 	let end_shift = document.getElementById("end_shift").value;
 	let hours_worked = document.getElementById("hours_worked");
@@ -49,7 +50,7 @@ function calculateHours() {
 
 		// Calculate total hours
 		var total_hours = total_shift_hours - totalb_hours;
-		var total_amount = pay_rate * total_hours;
+		var total_amount = pay_rate * rate_x * total_hours;
 
 		var hour_netdiff = Math.floor(total_hours);
 		var minute_netdiff = Math.floor((total_hours % 1) * 60);
