@@ -1,27 +1,66 @@
 @font-face {
-        font-family: Montserrat; src: url('Montserrat.ttf');
-        }
-
-	html, body {
 	font-family: Montserrat;
-	font-size:16px;
+	src: url('Montserrat.ttf');
+	font-family: Open Sans;
+	src: url('OpenSans.ttf');
+}
+
+html, body {
+	font-family: Montserrat, sans-serif;
+	font-size: 17px;
 	text-align: center;
 	scroll-behavior: smooth;
 	background-image: url("background.png");
-	}
+}
 
-	.button {
-		border-radius: 8px;
-		border: none;
-		background-color: #56A5E1;
-		color: white;
-		font-family: Montserrat;
-		font-size: 13px;
-		text-align: center;
-		padding: 10px 15px;
-		cursor: pointer;
-	}
+a {
+	color: #56A5E1;
+	text-decoration: none;
+}
 
-	.button:hover {
-		background-color: #438cc3;
-	}
+a:hover {
+	color: #438CC3;
+}
+
+.popup:hover {
+	transform: scale(1.05);
+	transition: 0.25s
+}
+
+#header, #main, #results {
+	height: auto;
+	width: 325px;
+	margin: 10px auto;
+	background: white;
+	padding: 1px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+	border-radius: 17px;
+	transition: ease all 0.25s;
+}
+
+input {
+	border: 1px solid #56A5E1;
+	border-radius: 5px;
+	padding: 1px;
+	margin: auto;
+}
+
+input:focus {
+	border: 2px solid #438CC3;
+}
+
+.button {
+	border-radius: 8px;
+	border: none;
+	background-color: #56A5E1;
+	color: white;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	padding: 10px 15px;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: #438CC3;
+}

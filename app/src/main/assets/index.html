@@ -1,59 +1,56 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Time Sheet Calculator</title>
-    <meta name="author" content="Jacky Ly">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-
-<body>
-<div id="header">
-    <h2></h2>
-    <h3> Settings </h3>
-    Pay Rate: &nbsp;&nbsp; $ &nbsp;&nbsp;<input type="number" id="pay_rate" value="14.00" min="10.00" max="100.00" step="0.01" style="width: 3.75em"/>
-	<br></br>
-	Rate Multiplier: &nbsp;&nbsp;<input type="number" id="rate_x" value="1.0" min="1.00" max="10.00" step="0.1" style="width: 2.5em"/> x
-    <br></br>
-</div>
-
-<form id="shift_times" onsubmit="return false">
-    <h3> Shift Times </h3>
-    Start Shift: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="start_shift" value="07:00"><br>
-
-    <div id="breaks">
-        <h4> Breaks </h4>
-        <div id ="break1">
-            Start Break: &nbsp;&nbsp;&nbsp;<input type="time" id="start_break1"><br></br>
-            End Break: &nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="end_break1"><br>
+<html lang="en">
+   <head>
+      <title>Time Sheet Calculator</title>
+      <meta name="author" content="Jacky Ly"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" type="text/css" href="style.css"/>
+   </head>
+   <body>
+      <div id="header">
+         <h3>Time Sheet Calculator</h3>
+         <img alt="Logo" src="calculator.ico" width="60" style="border-radius: 15px"/>
+         <h4>Swipe down to refresh!</h4>
+         <h5>App written by: <a href="https://bio.lyjacky11.me/">Jacky Ly</a><br><a href="https://github.com/lyjacky11">GitHub</a> -- <a href="https://JackyLy.ca/">Website</a></h5>
+      </div>
+      <div id="main">
+         <h3> Settings </h3>
+         Pay Rate: &nbsp;&nbsp; $ &nbsp;&nbsp;<input type="number" id="pay_rate" min="10.00" max="100.00" step="0.01" style="width: 3.75em"/>
+         <br><br>
+         Rate Multiplier: &nbsp;&nbsp;<input type="number" id="rate_x" value="1.0" min="1.00" max="10.00" step="0.1" style="width: 2.5em"/> x
+         <br><br>
+         <form id="shift_times" onsubmit="return false">
+            <h3> Shift Times </h3>
+            Start Shift: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="start_shift" value="07:00"><br>
+            <div id="breaks">
+               <h4> Breaks </h4>
+               <div id ="break1">
+                  Start Break: &nbsp;&nbsp;&nbsp;<input type="time" id="start_break1"><br><br>
+                  End Break: &nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="end_break1"><br>
+                  <br>
+               </div>
+            </div>
+            <div id="break_buttons">
+               <button id="removeButton" class="button popup" onClick="removeBreak()" style="visibility: hidden">Remove Break</button> &nbsp;
+               <button id="addButton" class="button popup" onClick="addBreak()" >Add Break</button>
+               <br>
+            </div>
+            <!-- <h6><font color="red"> NOTE: Only first break works, there is no <br> implementation for additional breaks yet! </font></h6> -->
+            <!-- <h5><font color="green">Developer Note: Additional breaks<br>functionality is now working correctly!</font></h5> -->
             <br>
-        </div>
-    </div>
-
-    <div id="break_buttons">
-        <button id="removeButton" class="button" onClick="removeBreak()" style="visibility: hidden">Remove Break</button> &nbsp;
-        <button id="addButton" class="button" onClick="addBreak()" >Add Break</button>
-        <br>
-    </div>
-    <!-- <h6><font color="red"> NOTE: Only first break works, there is no <br> implementation for additional breaks yet! </font></h6> -->
-    <!-- <h5><font color="green">Developer Note: Additional breaks<br>functionality is now working correctly!</font></h5> -->
-	</br>
-    End Shift: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="end_shift" value="19:00"><br>
-    <br></br>
-    <button id="resetBtn" class="button" onClick="clearForm()">Reset Times</button> &nbsp;
-    <button id="calculateBtn" class="button" onclick="calculateHours()">Calculate</button>
-</form>
-
-<div id="results" style="display: none">
-    <br></br>
-    <h3> Results </h3>
-    <p id="hours_worked">Hours Worked: 0h 0m | 0.00 hours</p>
-    <p id="total_breaks">Total Breaks: 0h 0m | 0.00 hours</p>
-    <p id="gross_pay">Gross Pay: $0.00</p>
-    <br>
-</div>
-
-<h5>App written by Jacky Ly.<br><a href="https://github.com/lyjacky11">GitHub</a> | <a href="https://lyjacky11.me/">https://lyjacky11.me/</a></h5>
-</body>
-<script src="script.js"></script>
+            End Shift: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="time" id="end_shift" value="19:00"><br>
+            <br><br>
+            <button id="resetBtn" class="button" onClick="clearForm()">Reset Times</button> &nbsp;
+            <button id="calculateBtn" class="button" onclick="calculateHours()">Calculate</button>
+         </form>
+		 <br>
+      </div>
+         <div id="results" style="display: none">
+            <h3>Results</h3>
+            <p id="hours_worked">Hours Worked: 0h 0m | 0.00 hours</p>
+            <p id="total_breaks">Total Breaks: 0h 0m | 0.00 hours</p>
+            <p id="gross_pay">Gross Pay: $0.00</p>
+         </div>
+      <script async src="script.js"></script>																						  
+   </body>
 </html>
